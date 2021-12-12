@@ -9,16 +9,16 @@ import Home from './components/pages/Home';
 function App() {
   return (
     <Router>
-            <div>
-              <Navbar />
-              <div className='container'>
-                <Routes>
-                  <Route path='/' element={<Home />} />
-                  <Route path='/about' element={<About />} />
-                </Routes> 
-              </div>
-            </div>
-          </Router>
+      <div>
+        <Navbar />
+        <div className='container'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+          </Routes> 
+        </div>
+      </div>
+    </Router>
   );
 }
 
