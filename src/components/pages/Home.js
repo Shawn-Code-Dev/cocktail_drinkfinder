@@ -1,7 +1,7 @@
 import React from 'react'
-import LoadCategories from '../categories/LoadCategories'
+import LoadCategories from '../LoadCategories'
 import DrinkList from '../drink/DrinkList'
-import LoadIngredients from '../ingredients/LoadIngredients'
+import LoadIngredients from '../LoadIngredients'
 import Search from '../Search'
 
 const Home = () => {

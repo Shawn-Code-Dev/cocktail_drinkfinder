@@ -20,7 +20,9 @@ a{
 
 .filter-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column;
+  justify-content: flex-start;
+  width: 50rem;
 }
 
 @media (max-width: 480px){

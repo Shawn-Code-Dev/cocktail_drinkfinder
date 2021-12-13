@@ -3,7 +3,9 @@ import {
   GET_DRINK,
   GET_INGREDIENTS,
   GET_CATEGORIES,
-  IS_LOADING
+  IS_LOADING,
+  GET_DRINK_BY_I,
+  GET_DRINK_BY_C
 } from './types'
 
 const drinkReducer = (state, action) => {
@@ -32,6 +34,18 @@ const drinkReducer = (state, action) => {
       categories: action.payload,
       loading: false
     }
+    case GET_DRINK_BY_I:
+      return {
+        ...state,
+        drinks: action.payload,
+        loading: false
+      }
+    case GET_DRINK_BY_C:
+      return {
+        ...state,
+        drinks: action.payload,
+        loading: false
+      }
     case IS_LOADING:
       return {
         ...state,

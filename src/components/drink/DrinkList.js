@@ -7,13 +7,20 @@ const DrinkList = () => {
 
   const {drinks} = drinkContext
 
-  return (
-    <div>
-      {drinks.map(drink => (
-        <DrinkCard key={drink.idDrink} drink={drink} />
-      ))}
-    </div>
-  )
+  if (!drinks) {
+    return (
+      <h2>Invalid Selection</h2>
+    )
+  } else {
+    return (
+      <div>
+        {drinks.map(drink => (
+          <DrinkCard key={drink.idDrink} drink={drink} />
+        ))}
+        {console.log(drinks)}
+      </div>
+    )
+  }
 }
 
 export default DrinkList

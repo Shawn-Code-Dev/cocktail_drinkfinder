@@ -7,7 +7,9 @@ import {
   GET_DRINK,
   GET_INGREDIENTS,
   GET_CATEGORIES,
-  IS_LOADING
+  IS_LOADING,
+  GET_DRINK_BY_I,
+  GET_DRINK_BY_C
 } from './types'
 
 const DrinkState = props => {
@@ -47,6 +49,18 @@ const DrinkState = props => {
     dispatch({ type: GET_CATEGORIES, payload: res.data.drinks })
   }
 
+  const getDrinksByIngredient = async (ing) => {
+    isLoading()
+    const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ing}`)
+    dispatch({ type: GET_DRINK_BY_I, payload: res.data.drinks })
+  }
+
+  const getDrinksByCategory = async (cat) => {
+    isLoading()
+    const res = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${cat}`)
+    dispatch({ type: GET_DRINK_BY_C, payload: res.data.drinks })
+  }
+
   return (
     <DrinkContext.Provider value={{
       drinks: state.drinks,
@@ -57,7 +71,9 @@ const DrinkState = props => {
       searchDrinks,
       getDrink,
       getIngredients,
-      getCategories
+      getCategories,
+      getDrinksByIngredient,
+      getDrinksByCategory
     }}>
       {props.children}
     </DrinkContext.Provider>
