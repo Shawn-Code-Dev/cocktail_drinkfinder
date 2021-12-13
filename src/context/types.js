@@ -1,0 +1,5 @@
+export const SEARCH_DRINKS = 'SEARCH_DRINKS'
+export const GET_DRINK = 'GET_DRINK'
+export const GET_INGREDIENTS = 'GET_INGREDIENTS'
+export const GET_CATEGORIES = 'GET_CATEGORIES'
+export const IS_LOADING = 'IS_LOADING'

@@ -18,6 +18,11 @@ a{
   text-decoration: none;
 }
 
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 480px){
   
 }
