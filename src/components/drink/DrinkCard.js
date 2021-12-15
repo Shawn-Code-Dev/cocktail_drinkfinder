@@ -10,7 +10,7 @@ const DrinkCard = ({drink: {strDrink, strCategory, strDrinkThumb, strGlass, idDr
         <p>{strCategory}</p>
         <p>{strGlass}</p>
       </div>
-      <Link to={`/drink/${idDrink}`} className='btn' >More Info</Link>
+      <Link to={`/drink/${idDrink}`} className='btn'>More Info</Link>
     </div>
   )
 }
