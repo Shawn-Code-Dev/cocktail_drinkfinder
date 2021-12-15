@@ -13,7 +13,9 @@
   margin: 0;
   max-width: 100%;
 }
-
+.test {
+  position: absolute;
+}
 html {
   font-size: 62.5%;
 }
@@ -40,15 +42,6 @@ ul {
 
 .bold {
   font-weight: 600;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--secondary-color);
-  color: var(--text-color);
-  padding: 0.4rem 1.3rem;
-  border: none;
-  cursor: pointer;
 }
 
 .center {
@@ -111,15 +104,23 @@ ul {
   margin-top: 2rem;
 }
 
+/* INTERACTABLES */
+.btn {
+  display: block;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  padding: 0.4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+}
+
 .filter-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
+  justify-content: center;
   width: 50rem;
 }
 
 .interactable {
-  width: 50%;
+  flex-grow: 1;
   border: 1px solid black;
   height: 100%;
   margin-right: 0.5rem;
@@ -127,6 +128,7 @@ ul {
 }
 
 .form {
+  display: flex;
   margin: 0.5rem;
 }
 
@@ -135,6 +137,7 @@ ul {
   width: 50%;
 }
 
+/* SPINNER */
 .spinner {
   display: block;
   margin: 0 auto;
