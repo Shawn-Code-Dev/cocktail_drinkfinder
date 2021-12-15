@@ -1,22 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import DrinkContext from '../context/drinkContext'
 
-const LoadIngredients = () => {
+const LoadAlcohol = () => {
   const drinkContext = useContext(DrinkContext)
-  const { ingredients, selected, drinks } = drinkContext
+  const { alcoholic, selected, drinks } = drinkContext
 
   const [disabled, setDisabled] = useState(false)
   const [option, setOption] = useState('')
 
   useEffect(() => {
-    drinkContext.getIngredients()
+    drinkContext.getAlcoholic()
   }, []) //eslint-disable-line
 
-
   useEffect(() => {
-    if (((drinks === undefined || drinks[0] === undefined) && (selected.category || selected.glass || selected.alcoholic)) || drinks[0]==='404'){
+    if (((drinks === undefined || drinks[0] === undefined) && (selected.glass || selected.ingredient || selected.category)) || drinks[0]==='404'){
       setDisabled(true)
-    } else if (selected.ingredient) {
+    } else if (selected.alcoholic) {
       setDisabled(true)
     } else {
       setDisabled(false)
@@ -24,11 +23,9 @@ const LoadIngredients = () => {
     }
   }, [drinks]) //eslint-disable-line
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    drinkContext.getDrinksByIngredient(option)
+    drinkContext.getDrinksByAlcoholic(option)
   }
 
   const handleChange = (e) => {
@@ -39,9 +36,9 @@ const LoadIngredients = () => {
     <div className='filter-container center'>
       <form onSubmit={handleSubmit} className='form'>
         <select onChange={handleChange} value={option} className='interactable' disabled={disabled}>
-          <option defaultValue value=''>--Ingredients--</option>
-          {ingredients.map(ingredient => (
-          <option value={`${ingredient.strIngredient1}`} key={`${ingredient.strIngredient1}`} >{`${ingredient.strIngredient1}`}</option>
+          <option defaultValue value=''>--Alcoholic--</option>
+          {alcoholic.map(alcohol => (
+          <option value={`${alcohol.strAlcoholic}`} key={`${alcohol.strAlcoholic}`} >{`${alcohol.strAlcoholic}`}</option>
           ))}
         </select>
         {!disabled && (option !== '') && <input type='submit' value='Search' className='btn'/>}
@@ -50,4 +47,4 @@ const LoadIngredients = () => {
   )
 }
 
-export default LoadIngredients
+export default LoadAlcohol

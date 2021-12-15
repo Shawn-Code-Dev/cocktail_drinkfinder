@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      About
+      Welcome to Cocktail Drink Finder! Use this app to filter cocktails to your hearts desire!
     </div>
   )
 }

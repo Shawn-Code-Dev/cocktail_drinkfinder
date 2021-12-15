@@ -10,7 +10,7 @@ import DrinkDetail from './components/drink/DrinkDetail'
 function App() {
   return (
     <Router>
-      <div>
+      <div className='app'>
         <Navbar />
         <div className='container'>
           <Routes>
