@@ -112,6 +112,7 @@ ul {
   padding: 0.4rem 1.3rem;
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 
 .filter-container {
