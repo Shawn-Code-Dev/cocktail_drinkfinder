@@ -5,7 +5,7 @@ const DrinkCard = ({
   drink: { strDrink, strCategory, strDrinkThumb, strGlass, idDrink },
 }) => {
   return (
-    <div className='card'>
+    <div className='card drink-card'>
       <h2>{strDrink}</h2>
       <img src={`${strDrinkThumb}/preview`} alt='' />
       <div className='extra-info'>

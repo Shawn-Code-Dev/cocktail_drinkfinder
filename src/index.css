@@ -91,6 +91,18 @@ ul {
   box-shadow: var(--prim-shadow);
   padding: 2rem;
   color: var(--text-color);
+  transition:all 0.2s ease;
+}
+
+.drink-card {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drink-card:hover {
+  transform: scale(1.01);
 }
 
 .card img {
@@ -120,6 +132,11 @@ ul {
   cursor: pointer;
   text-align: center;
   font-family: 'Merienda', cursive;
+}
+
+.drink-card a {
+  display: inline-block;
+  width: 55%;
 }
 
 .filter-container {
