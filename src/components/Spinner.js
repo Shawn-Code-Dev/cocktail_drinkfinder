@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react'
-import spinner from '../assets/spinner.gif'
+import React, { Fragment } from "react";
+import spinner from "../assets/spinner.gif";
 
-const Spinner = () =>
+const Spinner = () => (
   <Fragment>
-    <img src={spinner} alt='Loading' className='spinner'/>
+    <img src={spinner} alt='Loading' className='spinner' />
   </Fragment>
+);
 
-export default Spinner
+export default Spinner;

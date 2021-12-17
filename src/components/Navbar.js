@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className='navbar'>
-      <h1>
-        Cocktail Drink Finder
-      </h1>
+      <h1>Cocktail Drink Finder</h1>
       <ul>
         <li>
           <Link to='/'>Home</Link>
@@ -16,7 +14,7 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

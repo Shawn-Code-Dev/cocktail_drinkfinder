@@ -1,7 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const DrinkCard = ({drink: {strDrink, strCategory, strDrinkThumb, strGlass, idDrink}}) => {
+const DrinkCard = ({
+  drink: { strDrink, strCategory, strDrinkThumb, strGlass, idDrink },
+}) => {
   return (
     <div className='card'>
       <h2>{strDrink}</h2>
@@ -10,9 +12,11 @@ const DrinkCard = ({drink: {strDrink, strCategory, strDrinkThumb, strGlass, idDr
         <p>{strCategory}</p>
         <p>{strGlass}</p>
       </div>
-      <Link to={`/drink/${idDrink}`} className='btn'>More Info</Link>
+      <Link to={`/drink/${idDrink}`} className='btn'>
+        More Info
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default DrinkCard
+export default DrinkCard;

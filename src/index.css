@@ -13,9 +13,7 @@
   margin: 0;
   max-width: 100%;
 }
-.test {
-  position: absolute;
-}
+
 html {
   font-size: 62.5%;
 }
@@ -126,6 +124,10 @@ ul {
   height: 100%;
   margin-right: 0.5rem;
   padding: 0.2rem
+}
+
+.test {
+  text-transform: capitalize;
 }
 
 .form {
