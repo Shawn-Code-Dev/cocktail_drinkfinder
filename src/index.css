@@ -126,10 +126,6 @@ ul {
   padding: 0.2rem
 }
 
-.test {
-  text-transform: capitalize;
-}
-
 .form {
   display: flex;
   margin: 0.5rem;

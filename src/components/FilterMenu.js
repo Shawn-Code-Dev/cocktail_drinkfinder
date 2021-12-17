@@ -8,20 +8,12 @@ const FilterMenu = ({ letter, name, apiName }) => {
   const [disabled, setDisabled] = useState(false);
   const [option, setOption] = useState("");
 
-  let altFilters;
-
-  if (name === "ingredients") {
-    altFilters = ["categories", "glasses", "alcholic"];
-  } else if (name === "categories") {
-    altFilters = ["ingredients", "glasses", "alcholic"];
-  } else if (name === "glasses") {
-    altFilters = ["categories", "ingredients", "alcholic"];
-  } else {
-    altFilters = ["ingredients", "categories", "glasses"];
-  }
+  let altFilters = ["categories", "glasses", "alcholic", "ingredients"].filter(
+    (ele) => ele !== name
+  );
 
   useEffect(() => {
-    drinkContext.getFilter(letter); // Need to add letter
+    drinkContext.getFilter(letter);
   }, []); //eslint-disable-line
 
   useEffect(() => {
@@ -43,7 +35,7 @@ const FilterMenu = ({ letter, name, apiName }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    drinkContext.getDrinksByFilter(letter, name, option); // Fixing
+    drinkContext.getDrinksByFilter(letter, name, option);
   };
 
   const handleChange = (e) => {
@@ -59,7 +51,7 @@ const FilterMenu = ({ letter, name, apiName }) => {
           className='interactable'
           disabled={disabled}
         >
-          <option defaultValue value='' className='test'>
+          <option defaultValue value=''>
             {`~~ ${name[0].toUpperCase() + name.slice(1)} ~~`}
           </option>
           {drinkContext[name].map((option) => (
