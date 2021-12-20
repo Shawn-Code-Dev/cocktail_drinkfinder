@@ -1,20 +1,14 @@
 import {
   SEARCH_DRINKS,
   GET_DRINK,
-  GET_INGREDIENTS,
-  GET_CATEGORIES,
-  GET_GLASSES,
   IS_LOADING,
-  GET_DRINK_BY_I,
-  GET_DRINK_BY_C,
-  GET_DRINK_BY_G,
   CLEAR,
-  GET_ALCOHOLIC,
-  GET_DRINK_BY_A
-} from './types'
+  GET_DRINK_BY_F,
+  GET_FILTER,
+} from "./types";
 
 const drinkReducer = (state, action) => {
-  switch(action.type){
+  switch (action.type) {
     case SEARCH_DRINKS:
       return {
         ...state,
@@ -22,80 +16,32 @@ const drinkReducer = (state, action) => {
         selected: {
           category: false,
           ingredient: false,
-          glass: false
+          glass: false,
         },
-        loading: false
-      }
+        loading: false,
+      };
     case GET_DRINK:
-    return {
-      ...state,
-      drink: action.payload,
-      loading: false
-    }
-    case GET_ALCOHOLIC:
       return {
         ...state,
-        alcoholic: action.payload,
-        loading: false
-      }
-    case GET_INGREDIENTS:
+        drink: action.payload,
+        loading: false,
+      };
+    case GET_FILTER:
       return {
         ...state,
-        ingredients: action.payload,
-        loading: false
-      }
-    case GET_CATEGORIES:
+        [action.payload.filterName]: action.payload.filterList,
+        loading: false,
+      };
+    case GET_DRINK_BY_F:
       return {
         ...state,
-        categories: action.payload,
-        loading: false
-      }
-    case GET_GLASSES:
-      return {
-        ...state,
-        glasses: action.payload,
-        loading: false
-      }
-    case GET_DRINK_BY_A:
-      return {
-        ...state,
-        drinks: action.payload,
+        drinks: action.payload.drinks,
         selected: {
           ...state.selected,
-          alcoholic: true
+          [action.payload.selected]: true,
         },
-        loading: false
-      }
-    case GET_DRINK_BY_I:
-      return {
-        ...state,
-        drinks: action.payload,
-        selected: {
-          ...state.selected,
-          ingredient: true
-        },
-        loading: false
-      }
-    case GET_DRINK_BY_C:
-      return {
-        ...state,
-        drinks: action.payload,
-        selected: {
-          ...state.selected,
-          category: true
-        },
-        loading: false
-      }
-    case GET_DRINK_BY_G:
-      return {
-        ...state,
-        drinks: action.payload,
-        selected: {
-          ...state.selected,
-          glass: true
-        },
-        loading: false
-      }
+        loading: false,
+      };
     case CLEAR:
       return {
         ...state,
@@ -103,17 +49,17 @@ const drinkReducer = (state, action) => {
         selected: {
           category: false,
           ingredient: false,
-          glass: false
-        } 
-      }
+          glass: false,
+        },
+      };
     case IS_LOADING:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default drinkReducer
+export default drinkReducer;
